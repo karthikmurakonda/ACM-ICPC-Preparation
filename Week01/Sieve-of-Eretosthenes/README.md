@@ -8,15 +8,15 @@ The idea is simple: at the beginning we write down a row of numbers and eliminat
 except number 2 itself,  then divisible by 3, except number 3 itself, next by 5, 7, 11, 
 and all the remaining prime numbers till **_n_**.
 
-##Implementation
+## Implementation
 
 ````cpp
 int n;
-vector<char> prime (n + 1, true);
+vector<char> prime (n + 1, true); 
 prime[0] = prime[1] = false;
 for (int i = 2; i * i <= n; ++i)
     if (prime[i])
-        if (i * 1ll * i <= n)
+        if (i * 1ll * i <= n) // 1ll is for typesetting i^2 so it returns long long int even n is int type.
             for (int j = i * i; j <= n; j += i)
                 prime[j] = false;
 ````
